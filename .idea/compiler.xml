@@ -7,17 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="BlogService" />
         <module name="Authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Authentication" target="17" />
-      <module name="SpringMicroservice" target="17" />
+      <module name="Blog" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Authentication" options="-parameters" />
+      <module name="Blog" options="-parameters" />
+      <module name="BlogService" options="-parameters" />
       <module name="SpringMicroservice" options="" />
     </option>
   </component>

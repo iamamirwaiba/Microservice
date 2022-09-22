@@ -20,6 +20,7 @@
 
     <modules>
         <module>Authentication</module>
+        <module>BlogService</module>
     </modules>
 
     <dependencyManagement>
