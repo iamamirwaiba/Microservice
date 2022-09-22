@@ -18,6 +18,9 @@
         <java.version>17</java.version>
     </properties>
 
+    <modules>
+        <module>Authentication</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
