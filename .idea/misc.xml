@@ -6,7 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Authentication/pom.xml" />
-        <option value="$PROJECT_DIR$/BlogService/pom.xml" />
+        <option value="$PROJECT_DIR$/BlogService1/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringGateway/pom.xml" />
       </list>
     </option>
   </component>

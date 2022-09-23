@@ -16,6 +16,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Component
 @Qualifier("JwtFilter")
@@ -42,23 +45,14 @@ public class JwtFilter extends OncePerRequestFilter {
         String email = null;
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer")) {
             token = authorizationHeader.substring(7);
-            System.out.println("////");
-            System.out.println("////");
-            System.out.println("////");
             System.out.println(token);
-            System.out.println("////");
-            System.out.println("////");
-            System.out.println("////");
-            System.out.println("////");
-            email = jwtUtil.extractUsername(token);
-            System.out.println("////");
-            System.out.println("////");
-            System.out.println("////");
+            try {
+                email = jwtUtil.extractUsername(token);
+            }
+            catch (Exception e){
+                throw new DateTimeException("JwtExpired");
+            }
             System.out.println(email);
-            System.out.println("////");
-            System.out.println("////");
-            System.out.println("////");
-            System.out.println("////");
         }
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = service.loadUserByUsername(email);

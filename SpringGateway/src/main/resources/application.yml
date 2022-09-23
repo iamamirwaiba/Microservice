@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: Authentication
+          uri: localhost:8081
+          predicates:
+            - Path=/user/
+        - id: blogService
+          uri: localhost:8082
+          predicates:
+            - Path=/comment/
