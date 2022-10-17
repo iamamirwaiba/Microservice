@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @Controller
@@ -19,9 +21,9 @@ public class BlogController {
         this.blogService=blogService;
     }
 
-    @PostMapping("/add")
-    public @ResponseBody ResponseEntity<Map<String,String>> addBlog(@RequestBody Blog blog) throws Exception {
-        return blogService.addBlog(blog);
+    @PostMapping(value = "/add",consumes = {"application/json"})
+    public @ResponseBody ResponseEntity<Map<String,String>> addBlog(@RequestBody Blog blog, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return blogService.addBlog(blog,request,response);
     }
 
     @GetMapping("/getbyId/{id}")

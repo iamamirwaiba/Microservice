@@ -10,6 +10,7 @@
         <module name="SpringGateway" />
         <module name="Authentication" />
         <module name="BlogService1" />
+        <module name="ChatService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="Blog" options="-parameters" />
       <module name="BlogService" options="-parameters" />
       <module name="BlogService1" options="-parameters" />
+      <module name="ChatService" options="-parameters" />
       <module name="SpringGateway" options="-parameters" />
       <module name="SpringMicroservice" options="" />
     </option>

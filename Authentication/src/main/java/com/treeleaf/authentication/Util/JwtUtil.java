@@ -1,5 +1,7 @@
 package com.treeleaf.authentication.Util;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -29,19 +31,24 @@ public class JwtUtil {
         return Jwts.parser().setSigningKey(Constants.API_SECRET_KEY).parseClaimsJws(token).getBody();
     }
 
-    private Boolean isTokenExpired(String token) {
-        return extractExpiration(token).before(new Date());
+    public Boolean isTokenExpired(String token) {
+
+        DecodedJWT jwt= JWT.decode(token);
+        if( jwt.getExpiresAt().before(new Date())) {
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
     }
 
-    public String generateToken(String username) {
+    public String generateToken(String username,Date date) {
         Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, username);
+        return createToken(claims, username,date);
     }
 
-    private String createToken(Map<String, Object> claims, String subject) {
+    private String createToken(Map<String, Object> claims, String subject,Date date) {
 
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10))
+                .setExpiration(date)
                 .signWith(SignatureAlgorithm.HS256, Constants.API_SECRET_KEY).compact();
     }
 

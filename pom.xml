@@ -22,6 +22,8 @@
         <module>Authentication</module>
         <module>BlogService1</module>
         <module>SpringGateway</module>
+        <module>ChatService</module>
+
     </modules>
 
     <dependencyManagement>

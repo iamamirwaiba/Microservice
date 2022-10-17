@@ -1,7 +1,7 @@
 package com.treeleaf.authentication.Security.Config;
 
 import com.treeleaf.authentication.AppUser.CustomUserDetailsService;
-import com.treeleaf.authentication.Filter.JwtFilter;
+//import com.treeleaf.authentication.Filter.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +23,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private final JwtFilter jwtFilter;
+//    private final JwtFilter jwtFilter;
 
     private final CustomUserDetailsService appUserService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -32,11 +32,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/","/user/signUp","/user/signIn").permitAll()
+                .authorizeRequests().antMatchers("/","/user/signUp","/user/signIn","/jwt/**").permitAll()
                 .anyRequest()
                 .authenticated().and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
 

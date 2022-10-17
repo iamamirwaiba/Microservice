@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/Authentication/pom.xml" />
         <option value="$PROJECT_DIR$/BlogService1/pom.xml" />
         <option value="$PROJECT_DIR$/SpringGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/ChatService/pom.xml" />
       </list>
     </option>
   </component>

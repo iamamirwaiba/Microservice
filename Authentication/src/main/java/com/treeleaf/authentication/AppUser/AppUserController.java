@@ -19,13 +19,13 @@ public class AppUserController {
     }
 
 
-    @PostMapping("/signUp")
+    @PostMapping(value="/signUp",consumes = {"application/json"})
     public @ResponseBody ResponseEntity<Map<String,String>> signUp(@RequestBody AppUser appUser) throws Exception {
         return appUserService.signUp(appUser);
     }
 
 
-    @PostMapping("/signIn")
+    @PostMapping(value="/signIn",consumes = {"application/json"})
     public @ResponseBody ResponseEntity<Map<String,String>> signIn(@RequestBody AppUser appUser) throws Exception{
         return appUserService.signIn(appUser);
     }
