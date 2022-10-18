@@ -6,7 +6,6 @@
         <groupId>com.treeleaf</groupId>
         <artifactId>SpringMicroservice</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>BlogService1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -44,6 +43,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.6.12</version>
             </plugin>
         </plugins>
     </build>

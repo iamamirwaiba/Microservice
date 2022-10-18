@@ -23,6 +23,7 @@
         <module>BlogService1</module>
         <module>SpringGateway</module>
         <module>ChatService</module>
+        <module>EurekaServer</module>
 
     </modules>
 

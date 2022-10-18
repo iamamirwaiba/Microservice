@@ -34,6 +34,8 @@ public class ChatController {
 
 
     }
+
+
     @MessageMapping("/chat.send")
     @SendTo("/topic/public")
     public ChatEntity sendMessage(@Payload ChatEntity chatMessage) {

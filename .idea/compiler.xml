@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="EurekaServer" />
         <module name="SpringGateway" />
         <module name="Authentication" />
         <module name="BlogService1" />
@@ -25,6 +26,7 @@
       <module name="BlogService" options="-parameters" />
       <module name="BlogService1" options="-parameters" />
       <module name="ChatService" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
       <module name="SpringGateway" options="-parameters" />
       <module name="SpringMicroservice" options="" />
     </option>
